@@ -1,0 +1,40 @@
+ALGORITHM read_sentence
+VAR
+    str : STRING;
+    numChar : INTEGER := 0;
+    vowels : STRING :='AEIOUaeiou';
+    numWord : INTEGER := 1;
+    numVowel : INTEGER := 0;
+    i: INTEGER := 1;
+    j: INTEGER ;
+    k: INTEGER ;
+
+BEGIN
+    Read(str); 
+    Read(vowels);
+    Read(numChar);
+    Read(numWord);
+    Read(numVowel);
+    Read(i);
+    Read(j);
+    Read(k);
+    WHILE (str[i]<>'.') DO
+    FOR j FROM 1 TO 10 STEP 1  DO
+    IF (str[i] = vowels[j]) THEN
+        numVowel := numVowel + 1;
+    END_IF
+    END_FOR 
+    IF (str[i]=' ') THEN
+        numWord := numWord + 1;
+    END_IF
+     i := i+1;
+    END_WHILE
+    FOR k FROM 1 TO i STEP 1  DO
+    IF (str[k] <> ' ') THEN
+        numChar := numChar + 1;
+    END_IF
+    END_FOR
+    Write(numChar);
+    Write(numWord);
+    Write(numVowel);
+END
